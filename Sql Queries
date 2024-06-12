@@ -1,0 +1,337 @@
+create database Police_Database_Management;
+use Police_Database_Management;
+
+-- --Officers Table--
+create table officers(
+Officer_Id char(6) Primary key,
+First_Name varchar(10),
+Middle_Name varchar(10),
+Last_Name varchar(10),
+Name_Suffix varchar(5),
+Officer_Location varchar(25)not null,
+Officer_gender varchar(10)not null,
+Officer_height varchar(10) not null,
+Officer_weight varchar(10) not null,
+Achievement varchar(25)not null,
+Officer_Rank varchar(20) not null
+);
+insert into officers values('PF001','ASHOK','null','kumar','A','Vellore','Male','160 cm','75kg','Chief minister award','98');
+insert into officers values('PF002','ARUN','null','null','A','Tiruvannamalai','Male','175 cm','90kg','Gold medal award','112');
+insert into officers values('PF003','KUMARESAN','null','null','C','Ranipet','Male','180 cm','82 kg','Best Cop award','132');
+insert into officers values('PF004','KARTHIK','null','null','B','Ranipet','Male','190 cm','78kg','null','122');
+insert into officers values('PF005','GAJA','null','PATHI','k','Vellore','Male','178 cm','65kg','null','97');
+insert into officers values('PF006','DEEPAN','null','RAJ','A','Cheyyar','Male','160 cm','80kg','null','88');
+insert into officers values('PF007','RAJESH','SINGH','KUMAR','A','Vellore','Male','180 cm','72kg','Chief minister award','143');
+insert into officers values('PF008','PALANI','VEL','THYAGA','J','Tuticorin','Male','192 cm','80kg','null','133');
+insert into officers values('PF009','JANANI','null','null','S','Ranipet','Female','120 cm','90kg','null','121');
+insert into officers values('PF010','JULIE','null','null','D','Tirunelveli','Female','135 cm','70kg','Best Cop Award','111');
+insert into officers values('PF011','HARI','null','KRISHNAN','R','Tuticorin','Male','170 cm','69kg','Sharp shooter','102');
+insert into officers values('PF012','GOPAL','null','KRISHNAN','K','Namakkal','Male','190 cm','76kg','Fastest Runner','87');
+insert into officers values('PF013','SHRUTHI','null','HASSAN','K','Chennai','Female','176 cm','80kg','null','95');
+insert into officers values('PF014','ARUNYA','null','null','J','Vellore','Female','150 cm','90kg','Gold medalist','92');
+insert into officers values('PF015','JAI','null','GANESH','N','Chennai','Male','177 cm','78kg','null','134');
+insert into officers values('PF016','ASHOK','null','KANNAN','I','Coiambatore','Male','165 cm','79kg','null','98');
+insert into officers values('PF017','LEKHA','DIVYA','DHARSHINI','K','Courtallam','Female','169 cm','84kg','null','74');
+insert into officers values('PF018','PRAKASH','RAJ','kumar','K','Virudhunagar','Male','167 cm','76kg','Best cop award','108');
+insert into officers values('PF019','AAKASH','null','null','M','Thindivanam','Male','145 cm','80kg','Honest Cop award','110');
+insert into officers values('PF020','PRAKASH','null','KARTHI','H','Villupuram','Male','189 cm','70kg','null','81');
+insert into officers values('PF021','GUNA','null','NIDHI','U','Coiambatore','Male','156 cm','76kg','Honest Cop award','110');
+insert into officers values('PF022','SARAVANAN','null','KUMAR','Y','Tiruvannamalai','Male','167 cm','60kg','Best Cop award','76');
+insert into officers values('PF023','SANJAY','null','KUMAR','M','Thimiri','Male','157 cm','78kg','Best Cop award','56');
+insert into officers values('PF024','MOHAN','null','null','H','Ranipet','Male','130 cm','89kg','Best Cop award','62');
+insert into officers values('PF025','ARJUN','null','DAS','L','Tiruvannamalai','Male','168 cm','60kg','Chief Minister Award','76');
+insert into officers values('PF026','ANTONY','null','DAS','R','Trichy','Male','158 cm','68kg','null','65');
+insert into officers values('PF027','ROLEX','null','null','Y','Kanyakumari','Male','188 cm','76kg','null','56');
+insert into officers values('PF028','SARAVANAN','null','VEL','Y','Dindugul','Male','140 cm','88kg','Best Cop award','43');
+insert into officers values('PF029','SARANYA','null','null','R','Dharmapuri','Female','132 cm','70kg','null','34');
+insert into officers values('PF030','SOWMIYA','null','null','T','Kanyaumari','Female','127 cm','67kg','Best Cop award','55');
+
+select * from officers;
+
+----------------------------------- 
+
+-- Stations Table---
+create table Stations(
+Station_Id char(6) Primary key,
+Station_name varchar(25) not null,
+Station_location varchar(25) not null,
+Station_Incharge varchar(25) not null,
+Zone_of_station varchar(25) not null,
+Number_of_accused  int not null,
+Number_of_Officers int not null,
+Number_of_weapon int not null,
+Zone_incharge varchar(25) not null
+);
+-- --Insertion of values---- 
+insert into stations values('ST0001','G-06','Ponnai','Aravind','Vellore',8,15,24,'Elumalai');
+insert into stations values('ST0002','C2-Beach','Chennai Beach','Pravin','Chennai',12,19,30,'Sundar');
+insert into stations values('ST0003','ECR-2','ECR','Gajapathi','Chennai',17,32,35,'Sathya');
+insert into stations values('ST0004','KP-3','Kanchipuram','Prakash','Kanchipuram',18,15,19,'Karthik');
+insert into stations values('ST0005','CJ-7','Ammoor','Ajith','Coiambatore',18,15,19,'Vijay');
+insert into stations values('ST0006','G-07','Anna nagar','Praveen','Chennai',22,29,45,'Kumar');
+insert into stations values('ST0007','RC-7','Ocheri','Ashok','Ranipet',24,17,25,'Kannan');
+insert into stations values('ST0008','RS-72','Ulunthurpettai','Baskar','Thiruvannamalai',12,25,24,'Palani');
+insert into stations values('ST0009','SG-02','MGR nagar','Balaji','Dindugal',24,30,48,'Ashwin');
+insert into stations values('ST0010','MS-55','Velachery','Bhuvaneshwaran','Chennai',23,30,35,'Kotti');
+insert into stations values('ST0011','AS-04','Muthukadai','Santhanam','Ranipet',34,23,32,'Rajan');
+insert into stations values('ST0012','CJ-90','KK nagar','Jim','Kanchipuram',18,29,23,'Pathan');
+insert into stations values('ST0013','JK-99','Meenakshi nagar','Aakash','Tuticorin',30,36,19,'Manikandan');
+insert into stations values('ST0014','PN-08','Palayamkottai','Senthil','Tirunelveli',29,37,33,'Balaji');
+insert into stations values('ST0015','KPD-13','Katpadi','Rajesh','Vellore',34,29,27,'Aakash');
+insert into stations values('ST0016','TR-05','Thiruvalam','Srikanth','Ranipet',20,35,39,'Santhosh');
+insert into stations values('ST0017','TA-89','Tambaram','Sathish','Chennai',34,46,56,'Senthil');
+insert into stations values('ST0018','GU-55','Vellari','Vignesh','Tirunelveli',30,35,45,'Shivam');
+insert into stations values('ST0019','TH-66','Rantham','Thoufeeque','Thiruvannamalai',38,50,62,'Ahamed');
+insert into stations values('ST0020','R-27','Walaja','Abhinash','Ranipet',29,39,45,'Naveen');
+SELECT * FROM stations;
+
+--- location Table---
+
+create table location(
+Location_Id char(8) Primary key,
+Location_name varchar(25) not null,
+District_name varchar(25) not null
+);
+--- Insertion of values---
+SELECT * FROM LOCATION;
+insert into location values('LT01LG01','OMR','Chennai');
+insert into location values('LT01LG02','Thimiri','Ranipet');
+insert into location values('LT01LG03','Ponnai','Vellore');
+insert into location values('LT01LG04','Kadamanapakkam','Kanchipuram');
+insert into location values('LT01LG05','MGR Nagar','Dindugal');
+insert into location values('LT01LG06','Arani','Thiruvannamalai');
+insert into location values('LT01LG07','Vaniyambadi ','Thirupathur');
+insert into location values('LT01LG08','Arcot','Ranipet');
+insert into location values('LT01LG09','Katpadi','Vellore');
+insert into location values('LT01LG10','Navalur','Chennai');
+insert into location values('LT01LG11','Mangadu','Thiruvannamalai');
+insert into location values('LT01LG12','Puthupadi','Kanchipuram');
+insert into location values('LT01LG13','Ammoor','Coimbatore');
+insert into location values('LT01LG14','Vellari','Tirunelveli');
+insert into location values('LT01LG15','Guindy','Chennai');
+insert into location values('LT01LG16','Palayamkottai','Tirunelveli');
+insert into location values('LT01LG17','Walaja','Ranipet');
+insert into location values('LT01LG18','Thorapadi','Vellore');
+insert into location values('LT01LG19','Rantham','Thiruvannamalai');
+insert into location values('LT01LG20','Navalur','Chennai');
+
+
+--- Crimes Table----
+create table Crimes(
+Crime_Id char(6) Primary key,
+Crime_type varchar(50) not null,
+Crime_description varchar(50) not null,
+Fine_amount int,
+Punishment_duration varchar(25)
+);
+select * from crimes;
+--- Insertion of values---
+insert into crimes values('CR0001','Pick Pocketing','Taking from another Person Pockets',15000,'1 year');
+insert into crimes values('CR0002','Shop Thefting','Stealing an item from shop',5000,'3months');
+insert into crimes values('CR0003','Extortion','Obtaining others property in illegal',150000,'2 years');
+insert into crimes values('CR0004','Food and Drug adulteration','Mixing of harmful substances in food',100000,'1 year');
+insert into crimes values('CR0005','Kidnapping','Abducting somebody for money or personal',100000,'4 years');
+insert into crimes values('CR0006','Assault','Attacking someone in physical manner',20000,'1 year');
+insert into crimes values('CR0007','Drug Trafficking','Importing of Illegal drugs',200000,'4 years');
+insert into crimes values('CR0008','Robbery','Taking Something from people by force',80000,'2 years');
+insert into crimes values('CR0009','Smuggling','Taking People Illegaly',250000,'6 years');
+insert into crimes values('CR0010','Computer Fraud','Involving in stealing information from Devices',70000,'6 months');
+insert into crimes values('CR0011','Murder','Killing Somebody',250000,'Immediate Death');
+insert into crimes values('CR0012','Hijacking','Taking Control illegaly',150000,'1 year');
+insert into crimes values('CR0013','Hiding Black Money','Illegal Money',300000,'10 years');
+insert into crimes values('CR0014','Speeding','Driving Vehicle Fast',1000,'1 day');
+insert into crimes values('CR0015','Burglary','Entering a building and Stealing',25000,'2 months');
+insert into crimes values('CR0016','Drunk and Drive','Driving by Consuming alcohol',2000,'1 week');
+insert into crimes values('CR0017','Money Laundring','Tax Violation by providing wrong information',250000,'8 years');
+insert into crimes values('CR0018','Insider Trading','Use of Confidential Information to trade shares',120000,'5 years');
+insert into crimes values('CR0019','Arson','Delibrately setting fire to property',200000,'6 months');
+insert into crimes values('CR0020','Gold Smuggling','Illegal importing of gold',500000,'5 years');
+
+ 
+-- Names Table---
+create table Names(
+Name_Id int Primary key,
+First_Name varchar(25),
+Middle_Name varchar(25),
+Last_Name varchar(25),
+Name_suffix varchar(15),
+Age int not null,
+Gender varchar(4) not null,
+Gender_description varchar(15) not null,
+Father_name varchar(25),
+Mother_name varchar(25),
+Height varchar(25) not null,
+Height_description varchar(40) not null,
+Weight varchar(15) not null,
+Weight_description varchar(50) not null,
+Eye_color varchar(25) not null,
+Skin_tone varchar(25) not null,
+Is_married varchar(15) not null,
+Phone_number bigint not null,
+Address varchar(70) not null,
+DOB varchar(20) not null
+);
+drop table names;
+select * from names;
+
+-- Insertion of value---
+insert into Names values('82340001','Siva','','Murugesh','N',25,'M','Male','Naresh','Selvi','120cms','Normal height','90kgs','Normal weight','Black','light','No',9890705432,'123 Chettitangal main road','09-08-1989');
+insert into Names values('82340002','Lingesh','','waran','M',22,'M','Male','Murugan','Jothi','130cms','Normal height','110kgs','average weight','Brown','dark','No',9887060263,'25 kannan street','08-03-1997');
+insert into Names values('82340003','Nithish','','kumar','A',24,'M','Male','Arun','Pavithra','150cms','Average height','80kgs','Normal weight','Black','light','Yes',9780906543,'13 Raiv Gandhi road','10-07-1987');
+insert into Names values('82340004','Tharun','','kumar','J',30,'M','Male','Jagan','Mohana','125cms','Normal height','120kgs','average weight','Blue','light brownish','Yes',9780906846,'20 MBD road','11-01-1981');
+insert into Names values('82340005','Varun','','vendhan','P',27,'M','Male','Pandi','Pooja','170cms','Max height','90 kgs','Normal weight','Black','dark','No',9790654380,'33 Navalpur road','12-03-1989');
+insert into Names values('82340006','Krishna','','kanth','K',32,'M','Male','Kumar','Indhu','190cms','Max height','105kgs','average weight','Brown','light','Yes',994050678,'13 Anna salai','11-09-1992');
+insert into Names values('82340007','Nithish','','kanna','P',26,'M','Male','Palani','Kumari','145cms','Average height','150kgs','Over weight','Black','light','Yes',987543908,'32 MGR Road','15-07-1993');
+insert into Names values('82340008','Janaki','','devi','A',32,'F','Female','Arumugam','Soundariya','115cms','Normal height','70kgs','Normal weight','Brown','dark','No',9654789054,'44 Rathnagiri main road','16-04-1984');
+insert into Names values('82340009','Sowmiya','','','M',24,'F','Female','Murugesan','Pooja','130cms','Average height','100kgs','Normal weight','Black','dark','Yes',987080965,'50 OMR road','29-07-1988');
+insert into Names values('82340010','Sam','Justin','Walton','J',22,'M','Male','John','Julie','162cms','Max height','80kgs','Normal weight','Black','light','Yes',9690764312,'24 Junction Road','11-09-1998');
+insert into Names values('82340011','Kumar','','','B',20,'M','Male','Baskar','Suchithra','124cms','Average height','76kgs','Normal weight','Brown','dark','Yes',989657832,'12 Fort road','10-07-1997');
+insert into Names values('82340012','Jothi','','','P',24,'F','Female','Praveen','Sonia','135cms','Average height','102kgs','average weight','Brown','light','No',9890764356,'25 Byepass road','13-06-1986');
+insert into Names values('82340013','Praveen','','kumar','B',18,'M','Male','Bhuvanesh','Priya','122cms','Normal height','160kgs','Over weight','Blue','dark','No',9790864312,'55 Court Road','11-05-1996');
+insert into Names values('82340014','Aakash','','','M',22,'M','Male','Muthukrishnan','Indhu','133cms','Average height','123kgs','Average weight','Brown','light','Yes',9894588761,'88 ECR road','12-08-1986');
+insert into Names values('82340015','Deepan','','raj','V',22,'M','Male','Venakatesan','Kumutha','100cms','Normal height','110kgs','Normal weight','Blue','light','No',9675439076,'90 Fahil road','13-03-1996');
+insert into Names values('82340016','Rajesh','','','B',21,'M','Male','Bhakthavachalam','Uma','110cms','Normal height','90kgs','Normal weight','Brown','dark','Yes',9578690802,'25 near guindy bus stop','14-05-1997');
+insert into Names values('82340017','Srikanth','','','V',21,'M','Male','Venkatesan','Bhuvana','116cms','Normal height','160kgs','Over weight','Black','light','No',9458907643,'14 near techie park ','14-02-1990');
+insert into Names values('82340018','Vignesh','','waran','E',23,'M','Male','Eswaran','harini','153cms','Max height','90kgs','Normal weight','Black','dark','No',9896453219,'19 near grand hotel','20-06-1993');
+insert into Names values('82340019','Prakash','','Raj','K',30,'M','Male','Kannan','Kanmani','120cms','Average height','120kgs','Average weight','Brown','light','Yes',9698752316,'24 Opposite to bus stand','24-07-1986');
+insert into Names values('82340020','Koteeswaran','','','V',25,'M','Male','Vivek','Vanitha','114cms','Average height','152kgs','Max weight','Black','light','Yes',9568764312,'65 Bharathiyar road','11-08-1998');
+insert into Names values('82340021','Raj','','Kumar','V',29,'M','Male','Vetri','Mallika','125cms','Average height','120kgs','Normal weight','Blue','dark','No',9576531209,'89 Briyant nagar','15-06-1995');
+insert into Names values('82340022','Venkatesh','','waran','K',25,'M','Male','Karnan','Vanitha','154cms','Max height','134kgs','Average weight','Brown','light','Yes',9875321908,'76 Anna nagar','15-10-1998');
+insert into Names values('82340023','Aadarshini','','','M',25,'F','Female','Murugan','Shanthi','124cms','Average height','102kgs','Average weight','Blue','light','No',958976541290,'65 Bharathiyar road','11-08-1998');
+insert into Names values('82340024','Thiru','Venkatesh','Waran','J',27,'M','Male','Murali','Sheela','170cms','Max height','119 kgs','Average weight','Brown','dark','No',9790854367,'78 near sholingur bus stand','04-11-1996');
+insert into Names values('82340025','Vasanth','','Kumar','K',20,'M','Male','Kothandam','Kumari','134cms','Average height','148kgs','Average weight','Blue','light','No',9690127865,'90 Mettur Koot Road','07-09-1996');
+insert into Names values('82340026','Prakash','','Karthik','L',24,'M','Male','Lokesh','Vennila','126cms','Average height','134kgs','Average weight','Brown','dark','Yes',9587451289,'119 near cheyyar busstop','16-07-1990');
+insert into Names values('82340027','Santhana','Selva','Jothi','Y',19,'F','Female','Yogesh','Savitha','145cms','Average height','116kgs','Normal weight','Blue','light','No',9585671290,'66 Vinayaga street','13-09-1989');
+insert into Names values('82340028','Sharmila','','Prabha','S',32,'F','Female','Santhosh','Vanitha','156cms','Max height','165kgs','Max weight','Blue','light','Yes',9979653212,'78 Vinayagar Temple road','23-10-1999');
+insert into Names values('82340029','Pal','','Pandi','K',28,'M','Male','Kumaresan','Anitha','137cms','Average height','106kgs','Normal weight','Black','light','Yes',9890763252,'90 sanjiveeran road','23-04-1997');
+insert into Names values('82340030','Guna','nidhi','sekaran','C',23,'M','Male','Chidambaram','Bhuvana','129cms','Average height','110kgs','Normal weight','Brown','dark','No',9790652314,'89 near NSIC','25-08-1996');
+
+select * from names;
+
+-- Arrest Table(Main Table)------
+
+create table Arrest(
+Arrest_id int Primary key,
+Name_id int REFERENCES Names (Name_Id),
+Crime_id char(6)  REFERENCES Crimes(Crime_Id), 
+Officer_id char(6)REFERENCES officers (Officer_Id),
+Station_id char(6) REFERENCES Stations(Station_Id),
+Location_id char(8)REFERENCES location (Location_Id)
+);
+drop table arrest;
+select * from Arrest;
+
+insert into arrest values(92410001,82340001,'CR0001','PF001','ST0001','LT01LG01');
+insert into arrest values(92410002,82340002,'CR0002','PF002','ST0002','LT01LG02');
+insert into arrest values(92410003,82340003,'CR0003','PF003','ST0003','LT01LG03');
+insert into arrest values(92410004,82340004,'CR0004','PF004','ST0004','LT01LG04');
+insert into arrest values(92410005,82340005,'CR0005','PF005','ST0005','LT01LG05');
+insert into arrest values(92410006,82340006,'CR0006','PF006','ST0006','LT01LG06');
+insert into arrest values(92410007,82340007,'CR0007','PF007','ST0007','LT01LG07');
+insert into arrest values(92410008,82340008,'CR0008','PF008','ST0008','LT01LG08');
+insert into arrest values(92410009,82340009,'CR0009','PF009','ST0009','LT01LG09');
+insert into arrest values(92410010,82340010,'CR0010','PF010','ST0010','LT01LG10');
+
+insert into arrest values(92410011,82340011,'CR0011','PF011','ST0011','LT01LG11');
+insert into arrest values(92410012,82340012,'CR0012','PF012','ST0012','LT01LG12');
+insert into arrest values(92410013,82340013,'CR0013','PF013','ST0013','LT01LG13');
+insert into arrest values(92410014,82340014,'CR0014','PF014','ST0014','LT01LG14');
+insert into arrest values(92410015,82340015,'CR0015','PF015','ST0015','LT01LG15');
+insert into arrest values(92410016,82340016,'CR0016','PF016','ST0016','LT01LG16');
+insert into arrest values(92410017,82340017,'CR0017','PF017','ST0017','LT01LG17');
+insert into arrest values(92410018,82340018,'CR0018','PF018','ST0018','LT01LG18');
+insert into arrest values(92410019,82340019,'CR0019','PF019','ST0019','LT01LG19');
+insert into arrest values(92410020,82340020,'CR0020','PF020','ST0020','LT01LG20');
+
+insert into arrest values(92410021,82340021,'CR0001','PF021','ST0001','LT01LG01');
+insert into arrest values(92410022,82340022,'CR0002','PF022','ST0002','LT01LG02');
+insert into arrest values(92410023,82340023,'CR0003','PF023','ST0003','LT01LG03');
+insert into arrest values(92410024,82340024,'CR0004','PF024','ST0004','LT01LG04');
+insert into arrest values(92410025,82340025,'CR0005','PF025','ST0005','LT01LG05');
+insert into arrest values(92410026,82340026,'CR0006','PF026','ST0006','LT01LG06');
+insert into arrest values(92410027,82340027,'CR0007','PF027','ST0007','LT01LG07');
+insert into arrest values(92410028,82340028,'CR0008','PF028','ST0008','LT01LG08');
+insert into arrest values(92410029,82340029,'CR0009','PF029','ST0009','LT01LG09');
+insert into arrest values(92410030,82340030,'CR0010','PF030','ST0010','LT01LG10');
+
+insert into arrest values(92410031,82340001,'CR0011','PF001','ST0011','LT01LG11');
+insert into arrest values(92410032,82340002,'CR0012','PF002','ST0012','LT01LG12');
+insert into arrest values(92410033,82340003,'CR0013','PF003','ST0013','LT01LG13');
+insert into arrest values(92410034,82340004,'CR0014','PF004','ST0014','LT01LG14');
+insert into arrest values(92410035,82340005,'CR0015','PF005','ST0015','LT01LG15');
+insert into arrest values(92410036,82340006,'CR0016','PF006','ST0016','LT01LG16');
+insert into arrest values(92410037,82340007,'CR0017','PF007','ST0017','LT01LG17');
+insert into arrest values(92410038,82340008,'CR0018','PF008','ST0018','LT01LG18');
+insert into arrest values(92410039,82340009,'CR0019','PF009','ST0019','LT01LG19');
+insert into arrest values(92410040,82340010,'CR0020','PF010','ST0020','LT01LG20');
+
+insert into arrest values(92410041,82340011,'CR0001','PF011','ST0001','LT01LG01');
+insert into arrest values(92410042,82340012,'CR0002','PF012','ST0002','LT01LG02');
+insert into arrest values(92410043,82340013,'CR0003','PF013','ST0003','LT01LG03');
+insert into arrest values(92410044,82340014,'CR0004','PF014','ST0004','LT01LG04');
+insert into arrest values(92410045,82340015,'CR0005','PF015','ST0005','LT01LG05');
+insert into arrest values(92410046,82340016,'CR0006','PF016','ST0006','LT01LG06');
+insert into arrest values(92410047,82340017,'CR0007','PF017','ST0007','LT01LG07');
+insert into arrest values(92410048,82340018,'CR0008','PF018','ST0008','LT01LG08');
+insert into arrest values(92410049,82340019,'CR0009','PF019','ST0009','LT01LG09');
+insert into arrest values(92410050,82340020,'CR0010','PF020','ST0010','LT01LG10');
+
+--- Join and view--
+create or replace view project as (Select
+Arrest.Arrest_id,
+Names.First_Name as Person_First_name,
+Names.Middle_Name as Person_Middle_name,
+Names.Last_Name as Person_Last_name,
+Names.Name_Suffix as Person_Name_Suffix,
+Names.Age,
+Names.Gender as Person_Gender,
+Names.Gender_description as Person_Gender_description,
+Names.Father_name,
+Names.Mother_name,
+Names.Height as Person_Height,
+Names.Height_description as Person_height_description,
+Names.Weight as Person_weight,
+Names.Weight_description as Person_weight_description,
+Names.Is_married,
+Names.Phone_number,
+Names.Address,
+Names.DOB,
+Names.Skin_tone as Person_Skin_Tone,
+crimes.crime_type,
+crimes.crime_description,
+crimes.fine_amount,
+crimes.punishment_duration,
+Officers.First_Name as First_name,
+Officers.Middle_Name as Middle_name,
+Officers.Last_name as last_name,
+Officers.Name_Suffix as Name_Suffix,
+Officers.officer_location,
+Officers.Officer_gender as Gender,
+Officers.Officer_height as height,
+Officers.Officer_weight as weight,
+Officers.Achievement,
+Officers.Officer_Rank,
+Stations.Station_name,
+Stations.station_location as St_location,
+Stations.station_incharge,
+Stations.Zone_of_Station,
+Stations.Number_of_accused,
+Stations.Number_of_officers,
+Stations.Number_of_weapon,
+Stations.Zone_incharge,
+Location.location_name,
+location.district_name
+from arrest
+join
+names on Arrest.Name_id=names.name_id
+join 
+crimes on Arrest.crime_id=Crimes.crime_id
+join
+Stations on Arrest.station_id=Stations.station_id
+join
+Officers on Arrest.officer_id=Officers.officer_id
+join
+location on Arrest.location_id=location.location_id)
+order by arrest_id asc;
+ 
+select * from project;
